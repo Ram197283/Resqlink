@@ -25,12 +25,17 @@ export async function setupVite(app: Express, server: Server) {
     hmr: {
       server,
       port: 5000,
-      protocol: 'ws'
+      host: 'localhost'
     },
     appType: 'custom',
     server: {
       middlewareMode: true,
-      hmr: true,
+      hmr: {
+        server,
+        port: 5000,
+        host: 'localhost',
+        clientPort: 5000
+      },
       watch: {
         usePolling: true
       }

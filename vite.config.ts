@@ -30,9 +30,11 @@ export default defineConfig({
     emptyOutDir: true,
   },
   server: {
+    host: 'localhost',
+    port: 5000,
     hmr: {
-      protocol: 'ws',
       host: 'localhost',
+      protocol: 'ws',
       port: 5000
     }
   }
